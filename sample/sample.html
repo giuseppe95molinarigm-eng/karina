@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The 5 Step Book Launch for Experts — Interior Sample</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<style>
+  @page { size: 6in 9in; margin: 0; }
+  :root{
+    --orange:#EE5420;
+    --orange-dk:#C9401A;
+    --ink:#151515;
+    --grey:#5c5c5c;
+    --rule:#d9d3c7;
+    --cream:#F5F0E6;
+    --yellow:#FFD23F;
+    --serif:'Source Serif 4', Georgia, serif;
+    --cond:'Oswald', 'Arial Narrow', sans-serif;
+    --display:'Anton', Impact, sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:#fff; }
+  body{ font-family:var(--serif); color:var(--ink);
+        -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+
+  /* ---------- page frame ---------- */
+  .page{ width:6in; height:9in; position:relative; overflow:hidden;
+         page-break-after:always; break-after:page; background:#fff; }
+  .page:last-child{ page-break-after:auto; break-after:auto; }
+  .recto .frame{ left:0.78in; right:0.6in; }
+  .verso .frame{ left:0.6in;  right:0.78in; }
+  .frame{ position:absolute; top:0.72in; bottom:0.72in; }
+
+  .runhead{ position:absolute; top:0.38in; font:500 6.6pt/1 var(--cond);
+            letter-spacing:.22em; text-transform:uppercase; color:var(--grey); }
+  .recto .runhead{ right:0.6in; text-align:right; }
+  .verso .runhead{ left:0.6in; }
+  .runhead b{ color:var(--orange); font-weight:600; }
+  .folio{ position:absolute; bottom:0.38in; font:600 8pt/1 var(--cond); color:var(--ink);
+          display:flex; align-items:center; gap:7px; }
+  .recto .folio{ right:0.6in; }
+  .verso .folio{ left:0.6in; }
+  .folio i{ display:inline-block; width:16px; height:2px; background:var(--orange); }
+
+  /* ---------- body text ---------- */
+  p{ font-size:10.2pt; line-height:14.6pt; text-align:justify; hyphens:auto;
+     -webkit-hyphens:auto; text-indent:1.4em; orphans:2; widows:2;
+     font-variant-numeric: oldstyle-nums; }
+  h3 + p, .noindent, .dropcap{ text-indent:0; }
+  p strong{ font-weight:700; }
+
+  h3{ font:600 12.5pt/1.15 var(--cond); text-transform:uppercase; letter-spacing:.02em;
+      margin:14pt 0 6pt; display:flex; align-items:flex-start; gap:7pt; color:var(--ink); }
+  h3::before{ content:""; flex:0 0 auto; width:4pt; height:12.5pt; margin-top:1.5pt;
+              background:var(--orange); }
+  h3:first-child{ margin-top:0; }
+
+  .dropcap::first-letter{ font-family:var(--display); color:var(--orange); float:left;
+      font-size:44pt; line-height:38pt; padding:3pt 5pt 0 0; }
+
+  /* ---------- openers ---------- */
+  .opener .band{ position:absolute; left:0; right:0; top:0; height:3.55in; background:var(--orange);
+                 color:#fff; overflow:hidden; }
+  .band .texture{ position:absolute; inset:0; opacity:.08;
+     background-image: repeating-linear-gradient(0deg, #000 0 1px, transparent 1px 4px); }
+  .band .inner{ position:absolute; bottom:0.38in; }
+  .recto .band .inner{ left:0.78in; right:0.6in; }
+  .verso .band .inner{ left:0.6in; right:0.78in; }
+  .kicker{ font:500 8pt/1 var(--cond); letter-spacing:.38em; text-transform:uppercase;
+           display:flex; align-items:center; gap:10px; margin-bottom:12pt; }
+  .kicker::after{ content:""; flex:1; height:1.5px; background:#fff; opacity:.9; }
+  .opener h1{ font:400 38pt/0.98 var(--display); text-transform:uppercase; letter-spacing:.005em; }
+  .opener h1 .sub{ display:inline-block; margin-top:9pt; font-size:15pt; line-height:1;
+     background:var(--yellow); color:var(--ink); padding:5pt 8pt 4pt;
+     transform:rotate(-1.2deg); font-family:var(--display); }
+  .bignum{ position:absolute; right:0.45in; top:0.12in; font:400 150pt/1 var(--display);
+           color:rgba(255,255,255,.14); letter-spacing:-.02em; }
+  .opener .frame{ top:3.95in; }
+
+  /* ---------- pull quote ---------- */
+  .pull{ margin:12pt 0 12pt; padding:10pt 0 10pt; border-top:2.5px solid var(--ink);
+         border-bottom:1px solid var(--ink); position:relative; }
+  .pull q{ quotes:none; display:block; font:400 18pt/1.08 var(--display);
+           text-transform:uppercase; color:var(--ink); letter-spacing:.005em; }
+  .pull q span{ color:var(--orange); }
+  .pull .mark{ position:absolute; right:0; top:2pt; font:400 54pt/1 var(--display); color:var(--orange); }
+
+  /* ---------- PROVE ---------- */
+  .prove-head .kick{ font:500 7.5pt/1 var(--cond); letter-spacing:.34em; color:var(--orange);
+                     text-transform:uppercase; }
+  .prove-head h2{ font:400 34pt/0.95 var(--display); text-transform:uppercase; margin-top:6pt; }
+  .prove-head h2 em{ font-style:normal; color:var(--orange); }
+  .prove-head .lede{ font:400 9.2pt/1.4 var(--serif); font-style:italic; color:var(--grey);
+                     margin-top:6pt; text-align:left; text-indent:0; }
+  .steps{ margin-top:14pt; position:relative; }
+  .steps::before{ content:""; position:absolute; left:23pt; top:20pt; bottom:30pt; width:2px;
+                  background:repeating-linear-gradient(var(--orange) 0 4px, transparent 4px 7px); }
+  .step{ display:grid; grid-template-columns:46pt 1fr; gap:11pt; margin-bottom:10.5pt; position:relative; }
+  .tile{ width:46pt; height:46pt; background:var(--ink); color:#fff; display:flex;
+         align-items:center; justify-content:center; font:400 30pt/1 var(--display); position:relative; }
+  .step:nth-child(odd) .tile{ background:var(--orange); }
+  .step .n{ font:500 6.5pt/1 var(--cond); letter-spacing:.3em; color:var(--orange); text-transform:uppercase; }
+  .step h4{ font:600 12pt/1.1 var(--cond); text-transform:uppercase; margin:2pt 0 3pt; letter-spacing:.01em; }
+  .step p{ font-size:8.9pt; line-height:12.3pt; text-indent:0; text-align:left; hyphens:manual; }
+  .step p q{ font-style:italic; }
+
+  /* ---------- giveaway box ---------- */
+  .gift{ margin-top:16pt; background:var(--cream); border-top:4px solid var(--orange);
+         padding:14pt 14pt 14pt; position:relative; }
+  .tab{ position:absolute; top:-4px; left:14pt; transform:translateY(-100%);
+        background:var(--orange); color:#fff; font:600 7pt/1 var(--cond); letter-spacing:.28em;
+        padding:5pt 8pt 4pt; text-transform:uppercase; display:flex; align-items:center; gap:6px; }
+  .tab svg{ width:9pt; height:9pt; }
+  .gift-grid{ display:grid; grid-template-columns:1fr 1.05in; gap:12pt; align-items:center; }
+  .gift h4{ font:400 17pt/1.02 var(--display); text-transform:uppercase; margin-bottom:6pt; }
+  .gift p{ font-size:9.4pt; line-height:13.2pt; text-indent:0; text-align:left; }
+  .qr{ width:1.05in; height:1.05in; border:1.5px dashed var(--ink); background:#fff;
+       display:flex; flex-direction:column; align-items:center; justify-content:center;
+       font:600 7pt/1.2 var(--cond); letter-spacing:.2em; color:var(--grey); text-align:center; }
+  .qr svg{ width:30pt; height:30pt; margin-bottom:5pt; }
+  .scan{ font:600 7pt/1 var(--cond); letter-spacing:.2em; text-transform:uppercase; color:var(--orange); margin-top:8pt;}
+  .signoff{ margin-top:34pt; text-align:center; }
+  .signoff p{ text-align:center; text-indent:0; font-style:italic; }
+  .signoff .big{ font:400 26pt/1 var(--display); text-transform:uppercase; margin-top:6pt; font-style:normal;}
+  .signoff .big span{ background:var(--yellow); padding:2pt 8pt 0; }
+  .signoff .name{ margin-top:12pt; font:500 8pt/1 var(--cond); letter-spacing:.38em; text-transform:uppercase; }
+  .ornament{ display:flex; align-items:center; gap:8px; justify-content:center; margin:14pt auto 0; width:60%; }
+  .ornament::before,.ornament::after{ content:""; flex:1; height:1px; background:var(--ink); }
+  .ornament i{ width:6px; height:6px; background:var(--orange); transform:rotate(45deg); }
+
+  /* ---------- figure / table ---------- */
+  .fig-label{ font:500 7pt/1 var(--cond); letter-spacing:.32em; color:var(--orange); text-transform:uppercase; }
+  .fig-title{ font:400 19pt/1 var(--display); text-transform:uppercase; margin:5pt 0 9pt; }
+  table{ width:100%; border-collapse:collapse; font-family:var(--cond); }
+  thead th{ background:var(--ink); color:#fff; font:500 7.4pt/1.2 var(--cond); text-transform:uppercase;
+            letter-spacing:.06em; padding:6pt 6pt; text-align:left; vertical-align:bottom; }
+  thead th + th{ text-align:center; border-left:1px solid #444; }
+  thead th.b{ background:var(--orange); }
+  tbody td{ font:400 8.4pt/1.25 var(--cond); padding:4.6pt 6pt; border-bottom:1px solid var(--rule); vertical-align:middle; }
+  tbody td:first-child{ font-family:var(--serif); font-size:8.3pt; color:#333; width:42%; }
+  tbody td + td{ text-align:center; font-weight:500; border-left:1px solid var(--rule); }
+  tbody tr:nth-child(even) td{ background:var(--cream); }
+  tbody tr.key td{ font-weight:700; font-size:10.5pt; }
+  tbody tr.key td:first-child{ font-weight:600; font-size:8.3pt; color:var(--ink); }
+  tbody tr.key td.hi{ color:var(--orange); }
+  tbody tr.small td{ font-size:7.4pt; font-weight:400; line-height:1.3; }
+  tbody tr.small td:first-child{ font-size:8.3pt; }
+
+  .bars{ margin-top:12pt; }
+  .bars .cap{ font:600 7.4pt/1 var(--cond); text-transform:uppercase; letter-spacing:.12em; margin-bottom:6pt; }
+  .bar{ display:grid; grid-template-columns:0.95in 1fr; align-items:center; gap:8pt; margin-bottom:5pt; }
+  .bar .lbl{ font:400 7.6pt/1.15 var(--cond); color:var(--grey); text-transform:uppercase; letter-spacing:.04em; }
+  .bar .track{ height:15pt; position:relative; }
+  .bar .fill{ height:100%; background:var(--ink); display:flex; align-items:center; justify-content:flex-end;
+              padding-right:6pt; color:#fff; font:600 8pt/1 var(--cond); letter-spacing:.04em; }
+  .bar.b .fill{ background:var(--orange); }
+
+  .takeaway{ margin-top:13pt; background:var(--ink); color:#fff; padding:10pt 12pt; display:grid;
+             grid-template-columns:auto 1fr; gap:10pt; align-items:center; }
+  .takeaway .eq{ font:400 26pt/1 var(--display); color:var(--yellow); }
+  .takeaway div{ font:500 9.6pt/1.3 var(--cond); text-transform:uppercase; letter-spacing:.03em; }
+  .ask{ margin-top:11pt; border-left:4px solid var(--orange); padding:2pt 0 2pt 10pt; }
+  .ask p{ font-size:9.4pt; line-height:13.4pt; text-indent:0; text-align:left; }
+  .ask .h{ font:600 8pt/1 var(--cond); letter-spacing:.24em; text-transform:uppercase; color:var(--orange); margin-bottom:4pt; }
+  .note{ margin-top:9pt; font:italic 400 7.6pt/1.35 var(--serif); color:var(--grey); }
+</style>
+</head>
+<body>
+
+<!-- ================= PAGE 1 — INTRO OPENER (recto) ================= -->
+<section class="page recto opener">
+  <div class="band">
+    <div class="texture"></div>
+    <div class="inner">
+      <div class="kicker">Introduction</div>
+      <h1>How It All<br>Started…</h1>
+    </div>
+  </div>
+  <div class="frame">
+    <h3>Single Mom, Two Small Kids, and a Big Idea</h3>
+    <p class="dropcap">When I landed back in Canada at 4 am from Brazil in 2012 with 2 kids, ages 2 and 3, 13 pieces of luggage, 2 strollers, and 2 car seats, I didn’t think I’d make it.</p>
+    <p>My very short marriage ended, and I wanted to come home. I became a single mom instantly. My days were full. My nights were fuller. My to-do list was longer than a grocery store receipt, and I was always exhausted.</p>
+    <p>But somewhere in the middle of all that, I kept thinking: I need to write my book. I spent years training leaders in Latin and Central America, in both Spanish and Portuguese, and I was really good at it. I knew that if I could just capture my method—the way I trained, the way I broke through to people—I would be able to help millions.</p>
+    <p>When I came back to North America, once again, I started training in the corporate world, this time, not as a consultant but as an employee. I wanted to build my knowledge base here. So while the kids adjusted to their new home and learned to speak English, I went to work. I commuted two hours each way and took care of my kids. I was a rat on a wheel for eight solid years. And then, COVID happened, and we all got locked down.</p>
+  </div>
+  <div class="folio">1</div>
+</section>
+
+<!-- ================= PAGE 4 — BODY + PULL QUOTE (verso) ================= -->
+<section class="page verso">
+  <div class="runhead"><b>The 5 Step Book Launch</b> &nbsp;·&nbsp; For Experts</div>
+  <div class="frame">
+    <h3>Six Corporate Clients in the First Month</h3>
+    <p>Exactly on February 7th, 2022, I was let go from my corporate training job. My department was cut, and soon after, the whole company was bought out. I was jobless and a little scared; I’m not gonna lie.</p>
+    <p>Funny enough, the day I was laid off was the same day I <strong>hit publish on Amazon</strong>, and my book went officially LIVE. This is the part that still makes me smile. God never closes one door without opening up another. I had a decision to make: Do I look for another job, or do I go back to consulting? I was in the middle of COVID, I was the only breadwinner, and I had two little ones to feed. I decided to take a deep breath, trust God, and let go of the J.O.B mentality.</p>
+    <p>I promised myself I would never go back to an office again. I’m pleased to tell you that I didn’t. From the day I made the decision to start my consulting business, I work from home, wherever that happens to be.</p>
+    <p>Research shows that when you take a stand for your life and make what I call a “no going back decision,” that decision affects the molecular structure of the universe around us.</p>
+    <p>So, here’s what that decision brought about:</p>
+    <p>In the first month after publishing, I signed six corporate clients to teach leadership. Six. In one month, I landed a 4-year contract with one of the biggest publishing companies that literally took care of all my bills.</p>
+    <div class="pull">
+      <span class="mark">”</span>
+      <q>My book became<br>my <span>business card.</span><br>It became a door opener.</q>
+    </div>
+    <p class="noindent">I didn’t suddenly get better at selling. In fact, I still had the same level of sales know-how: “Zero”; my book did the heavy lifting. People read it, loved it, understood my technique, trusted me, and reached out.</p>
+  </div>
+  <div class="folio"><i></i>4</div>
+</section>
+
+<!-- ================= PAGE 7 — PROVE METHOD (recto) ================= -->
+<section class="page recto">
+  <div class="runhead">Introduction &nbsp;·&nbsp; <b>How to Use This Book</b></div>
+  <div class="frame">
+    <div class="prove-head">
+      <div class="kick">Your roadmap · 5 steps</div>
+      <h2>The <em>PROVE</em><br>Method</h2>
+      <p class="lede">Expertise in, clients out. Come back to this page whenever you need to see where you are.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="tile">P</div>
+        <div><div class="n">Step 01</div><h4>Pinpoint the Problem</h4>
+        <p>Who do you help, and what do they need help with? We’re getting specific here. Your book needs to speak to someone who reads it and thinks, <q>She gets me.</q></p></div>
+      </div>
+      <div class="step">
+        <div class="tile">R</div>
+        <div><div class="n">Step 02</div><h4>Reveal Your Method</h4>
+        <p>Get what you know out of your head and onto the page. We’ll turn the way you help people into clear steps your readers can follow. You may think, <q>But I just know how to do this.</q> Exactly. Let’s show them how.</p></div>
+      </div>
+      <div class="step">
+        <div class="tile">O</div>
+        <div><div class="n">Step 03</div><h4>Offer the Evidence</h4>
+        <p>Give people a reason to trust your approach. Share examples, client stories, and results that show what your method can do. Help readers see how it could apply to their own situation.</p></div>
+      </div>
+      <div class="step">
+        <div class="tile">V</div>
+        <div><div class="n">Step 04</div><h4>Value Your Expertise</h4>
+        <p>Decide what readers can hire you to help them achieve. We’ll build a paid offer with a clear outcome, scope, and price. You need to know what you’re offering when someone finishes your book and asks, <q>How can I work with you?</q></p></div>
+      </div>
+      <div class="step">
+        <div class="tile">E</div>
+        <div><div class="n">Step 05</div><h4>Engage Your Future Clients</h4>
+        <p>Get your book into the right hands and keep the conversation going. Use your launch, your teaching, and your follow-up to build relationships with people who could benefit from your help.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="folio">7<i></i></div>
+</section>
+
+<!-- ================= PAGE 8 — END OF INTRO + GIVEAWAY (verso) ================= -->
+<section class="page verso">
+  <div class="runhead"><b>The 5 Step Book Launch</b> &nbsp;·&nbsp; For Experts</div>
+  <div class="frame">
+    <p class="noindent">Along the way, we’ll cover the practical work of writing, packaging, self-publishing, and launching your book. Please do the activities. Don’t just read and nod. By the end, I want you to have decisions made, work completed, and a plan you’re ready to put into action.</p>
+    <p>Each chapter ends with an activity. Please do them. Don’t just read and nod. Reading about writing a book is like reading about going to the gym. It feels productive, but nothing changes.</p>
+    <p>Each chapter also has a free giveaway. Scan the QR code, grab your bonus, and keep moving.</p>
+
+    <div class="gift" style="margin-top:34pt">
+      <div class="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><rect x="3" y="9" width="18" height="12"/><path d="M3 13h18M12 9v12M12 9C9 9 6.5 3.5 9.5 3.5S12 9 12 9zm0 0c3 0 5.5-5.5 2.5-5.5S12 9 12 9z"/></svg>
+        Free Giveaway
+      </div>
+      <div class="gift-grid">
+        <div>
+          <h4>Welcome Video +<br>Downloadable Workbook</h4>
+          <p>Let’s start right now. Scan the QR code to watch my welcome video and download your workbook. You’ll use it as you go through every chapter.</p>
+          <div class="scan">Scan to download →</div>
+        </div>
+        <div class="qr">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5c5c5c" stroke-width="1.6"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM14 20h2M20 14v2"/></svg>
+          QR CODE
+        </div>
+      </div>
+    </div>
+
+    <div class="signoff">
+      <p>Let’s show them what we’ve got.</p>
+      <div class="big"><span>See you inside!</span></div>
+      <div class="name">— Karina</div>
+      <div class="ornament"><i></i></div>
+    </div>
+  </div>
+  <div class="folio"><i></i>8</div>
+</section>
+
+<!-- ================= PAGE 9 — CHAPTER 1 OPENER (recto) ================= -->
+<section class="page recto opener">
+  <div class="band">
+    <div class="texture"></div>
+    <div class="bignum">1</div>
+    <div class="inner">
+      <div class="kicker">Chapter 1</div>
+      <h1>Self-Publishing<br>vs. Traditional<br>Publishing<br><span class="sub">Which Path Is for You?</span></h1>
+    </div>
+  </div>
+  <div class="frame">
+    <h3>Traditional Publishing Is for Famous People</h3>
+    <p class="dropcap">When I published my first book, I needed it to do something. I had two kids, bills to pay, and a corporate job that disappeared the same day my book went live. A beautiful book sitting on a shelf would have been lovely, but lovely wasn’t going to take care of my family. I needed people to read it, understand how I could help them, and pick up the phone.</p>
+    <p>And they did. Six corporate clients in the first month. My book gave people a chance to get to know my work before we ever had a conversation. That’s why I want you to think about publishing a little differently. You’re an expert. You have something to teach, a problem you solve, and people who need your help. Your book should make it easier for those people to find you.</p>
+    <p>But first, we need to talk about the dream. You know the one where a publisher discovers you, falls in love with your ideas, and offers you a contract. They handle everything, your book lands in bookstores, and suddenly everyone wants to interview you.</p>
+  </div>
+  <div class="folio">9<i></i></div>
+</section>
+
+<!-- ================= PAGE 14 — ROYALTIES CHART (verso) ================= -->
+<section class="page verso">
+  <div class="runhead"><b>The 5 Step Book Launch</b> &nbsp;·&nbsp; For Experts</div>
+  <div class="frame">
+    <div class="fig-label">Chart 1.1</div>
+    <div class="fig-title">How Royalties and<br>Advances Add Up</div>
+    <table>
+      <thead>
+        <tr><th>What You’re Comparing</th><th>Based on<br>Cover Price</th><th class="b">Based on<br>Publisher’s Receipts</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Book’s cover price</td><td>$20</td><td>$20</td></tr>
+        <tr><td>Amount used to calculate your royalty</td><td>$20 cover price</td><td>$10 received by the publisher</td></tr>
+        <tr><td>Your royalty rate</td><td>10%</td><td>10%</td></tr>
+        <tr class="key"><td>Your royalty per eligible sale</td><td>$2</td><td class="hi">$1</td></tr>
+        <tr><td>Royalties earned on 1,000 eligible sales</td><td>$2,000</td><td>$1,000</td></tr>
+        <tr><td>Advance paid against future royalties</td><td>$10,000</td><td>$10,000</td></tr>
+        <tr class="key"><td>Eligible sales needed to earn out your advance</td><td>5,000 copies</td><td class="hi">10,000 copies</td></tr>
+        <tr class="small"><td>When additional royalty payments become due</td><td colspan="2">After royalties exceed the $10,000 advance, according to the payment schedule</td></tr>
+      </tbody>
+    </table>
+
+    <div class="bars">
+      <div class="cap">Copies to sell before you see another royalty payment</div>
+      <div class="bar"><div class="lbl">Cover price</div><div class="track"><div class="fill" style="width:50%">5,000</div></div></div>
+      <div class="bar b"><div class="lbl">Publisher’s receipts</div><div class="track"><div class="fill" style="width:100%">10,000</div></div></div>
+    </div>
+
+    <div class="takeaway">
+      <div class="eq">=10%</div>
+      <div>Same percentage. Half the money per sale. Twice as many sales to earn out the same advance.</div>
+    </div>
+
+    <div class="ask">
+      <div class="h">Before you sign, ask</div>
+      <p>Is my royalty based on the cover price or the publisher’s receipts? Do different formats have different rates? How do discounts and deductions affect my earnings? When are payments due? Have someone walk you through the actual numbers.</p>
+    </div>
+    <p class="note">Illustrative examples assume the same royalty amount on every eligible sale. Actual calculations and payment timing depend on your contract.</p>
+  </div>
+  <div class="folio"><i></i>14</div>
+</section>
+
+</body>
+</html>
